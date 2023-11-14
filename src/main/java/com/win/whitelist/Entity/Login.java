@@ -25,7 +25,7 @@ public class Login {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long codigo;
-    public String nombre;
-    public String apellido;
+    public String usuario;
+    public String password;
 
 }
