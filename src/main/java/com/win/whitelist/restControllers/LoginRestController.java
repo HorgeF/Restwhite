@@ -17,7 +17,7 @@ import com.win.whitelist.Service.LoginService;
 
 import java.util.Map;
 
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/api/")
 @RestController
 public class LoginRestController {
