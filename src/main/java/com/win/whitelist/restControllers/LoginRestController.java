@@ -17,7 +17,7 @@ import com.win.whitelist.Service.LoginService;
 
 import java.util.Map;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin
 @RequestMapping("/api/")
 @RestController
 public class LoginRestController {
@@ -25,7 +25,7 @@ public class LoginRestController {
      @Autowired
      LoginService loginservice;
 
-    @CrossOrigin
+    
     @PostMapping("/login")
     public ResponseEntity<Map<String, Object>> login(@RequestParam String username, @RequestParam String password) {
         // Realiza la autenticación utilizando el servicio de autenticación
