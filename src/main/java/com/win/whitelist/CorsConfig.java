@@ -1,18 +1,19 @@
-package com.win.whitelist.restControllers;
+package com.win.whitelist;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@EnableWebMvc
 public class CorsConfig implements WebMvcConfigurer {
     
     @Override
-    public void addCorsMappings(CorsRegistry registry)
-    {
-       registry.addMapping("/**").allowedOrigins("*").allowedMethods("*");
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("*")
+                .allowedMethods("*")
+                .allowedHeaders("*");
     }
 
+    
 }
