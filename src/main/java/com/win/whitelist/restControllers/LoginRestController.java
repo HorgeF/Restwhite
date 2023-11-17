@@ -5,30 +5,32 @@ import java.util.HashMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.win.whitelist.Entity.Login;
 import com.win.whitelist.Service.LoginService;
+
 
 import java.util.Map;
 
 
 @RequestMapping("/api/")
 @RestController
-@CrossOrigin("*")
 public class LoginRestController {
     
      @Autowired
      LoginService loginservice;
 
     @PostMapping("/login")
-    public ResponseEntity<Map<String, Object>> login(@RequestParam String username, @RequestParam String password) {
+    public ResponseEntity<Map<String, Object>> login(@RequestBody Login loginrequest) {
+        
         // Realiza la autenticación utilizando el servicio de autenticación
+        String username = loginrequest.getUsuario();
+        String password = loginrequest.getPassword();
+
         Login authenticatedUser = loginservice.authenticate(username, password);
 
         if (authenticatedUser != null) {

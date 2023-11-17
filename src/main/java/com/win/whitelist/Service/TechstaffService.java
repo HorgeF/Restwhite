@@ -14,17 +14,17 @@ public class TechstaffService {
     @Autowired //Al usar Autowired habilitamos la inyección de dependencia.
     private TechstaffRepository TechstaffRepository;
 
-    public Techstaff/*boolean*/ addCliente(Techstaff cli){
+    public Techstaff/*boolean*/ addStaff(Techstaff cli){
         return TechstaffRepository.save(cli);
         
     }
     
-    public Techstaff/*boolean*/ updateCliente(Techstaff cli){
+    public Techstaff/*boolean*/ updateStaff(Techstaff cli){
         return TechstaffRepository.save(cli);
         
     }
     
-    public List<Techstaff> getAllClientes(){
+    public List<Techstaff> getAllStaff(){
         return TechstaffRepository.findAll();
     }
     

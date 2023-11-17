@@ -22,6 +22,8 @@ public class Techstaff {
     public String celular;
     public String fechaingreso;
     public String fechacese;
-    public String comentarios;  
+    public String comentarios;
+    public Long idestado;
+    public Long idcontrata;  
     
 }

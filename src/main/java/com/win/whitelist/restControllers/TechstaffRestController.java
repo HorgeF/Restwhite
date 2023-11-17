@@ -24,22 +24,22 @@ public class TechstaffRestController {
 
      @GetMapping("/techstaff")
     List<Techstaff> all(){
-        return techstaffservice.getAllClientes();
+        return techstaffservice.getAllStaff();
     }
     
     @GetMapping("/techstaff/{id}")
-    Techstaff buscarCliente(@PathVariable Long id){
+    Techstaff buscarStaff(@PathVariable Long id){
         return techstaffservice.getById(id);
     }
     
     @PostMapping("/techstaff")
-    Techstaff nuevoCliente(@RequestBody Techstaff staff){
-        return techstaffservice.addCliente(staff);
+    Techstaff nuevoStaff(@RequestBody Techstaff staff){
+        return techstaffservice.addStaff(staff);
     }
     
     @PutMapping("/techstaff")
     Techstaff actualizarTechStaff(@RequestBody Techstaff staff){
-        return techstaffservice.addCliente(staff);
+        return techstaffservice.addStaff(staff);
     }
     
     @DeleteMapping("/techstaff/{id}")
