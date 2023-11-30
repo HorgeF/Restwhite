@@ -24,8 +24,11 @@ import lombok.Data;
 public class Login {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long codigo;
+    public Long id_usuario;
     public String usuario;
     public String password;
+    public String razon_social;
+    public int id_contrata;
+
 
 }

@@ -1,5 +1,6 @@
 package com.win.whitelist.Entity;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,7 +11,7 @@ import lombok.Data;
 @Entity //@Entity es una anotación (o decorador) de JPA (Java Persistence API)
 @Table(name = "techstaff")
 @Data //@Data es un decorador que autogenera los getters y setters
-public class Techstaff {
+public class Techstaff_list {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,6 +26,7 @@ public class Techstaff {
     public String comentarios;
     public int idestado;
     public int idcontrata;  
+    public String razon_social;
     
 }
 

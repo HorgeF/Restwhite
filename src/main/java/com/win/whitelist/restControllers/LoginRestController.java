@@ -35,11 +35,13 @@ public class LoginRestController {
 
         if (authenticatedUser != null) {
             // Usuario autenticado, puedes devolver un token JWT u otra información relevante
-            String token = generateJwtToken(authenticatedUser); // Implementa tu propia lógica para generar un token
+                   String token = generateJwtToken(authenticatedUser); // Implementa tu propia lógica para generar un token
                    // Devuelve un objeto JSON con el token y código 1 (éxito)
                    Map<String, Object> response = new HashMap<>();
                    response.put("token", token);
                    response.put("code", 1);
+                   response.put("id_contrata", authenticatedUser.id_contrata);
+                   response.put("razonsocial", authenticatedUser.razon_social);
                    return ResponseEntity.ok().body(response);
 
         } else {
@@ -47,6 +49,8 @@ public class LoginRestController {
                     Map<String, Object> response = new HashMap<>();
                     response.put("token", null);
                     response.put("code", 0);
+                    response.put("id_contrata", "" );
+                    response.put("razonsocial", "");
                     return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
         }
     }
